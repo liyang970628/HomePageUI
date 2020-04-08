@@ -1,0 +1,137 @@
+a:link {
+	text-decoration: none;
+	color: #000000;
+}
+a:active { 
+	text-decoration:none;
+	color: #000000;
+}
+a:hover {
+	text-decoration:none;
+	color: #000000;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
+.index-baseView {
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(to left,#6495ED,#4169E1);
+}
+.index-topView {
+	width: 100%;
+	height: 8%;
+	position:relative;
+}
+.index-toptitle{
+	width: 40%;
+	height: 40%;
+	background: #6495ED;
+	position:absolute;
+	left:15px;
+	bottom:10px;
+}
+.index-posterView {
+	width: 100%;
+	height: 20%;
+	background: #FFFFFF;
+	border-radius: 20px 20px 0px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.index-serviceView {
+	width: 100%;
+	height: 10%;
+	background: #FFFFFF;
+	display: flex;
+	border-bottom: #F5F5F5 solid 10px;
+}
+.index-newsView {
+	width: 100%;
+	height: 62%;
+	background: #FFFFFF;
+}
+.index-poster {
+	width: 90%;
+	height: 80%;
+}
+.index-posterImg {
+	width: 100%;
+	height: 100%;
+	border-radius: 10px;
+}
+.index-serviceButton {
+	width: 25%;
+	height: 100%;
+}
+.index-serviceImg {
+	width: 100%;
+	height: 100%;
+}
+.index-plateHeading {
+	width: 97%;
+	height: 8%;
+	font-size: 120%;
+	font-family: sans-serif;
+	margin-left: 3%;
+	display: flex;
+	align-items: center;
+	border-bottom: #F5F5F5 solid 2px;
+}
+.index-newsDatas {
+	width: 100%;
+	height: 25%;
+	border-bottom: #F5F5F5 solid 2px;
+	display: flex;
+}
+.index-panel {
+	width: 100%;
+	height: 90%;
+	overflow-y: scroll;
+}
+.index-newsLeftPart {
+	width: 70%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+.index-newsRightPart {
+	width: 30%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.index-newstitle {
+	width: 90%;
+	height: 30%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+.index-newsTime {
+	width: 40%;
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 50%;
+	color: #808080;
+}
+.index-newsAuthor {
+	width: 40%;
+	height: 20%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 50%;
+	color: #808080;
+}
+.index-newsImg {
+	width: 60%;
+	height: 60%;
+}

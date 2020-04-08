@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet"  href="css/index.css" />	
+    <title></title>
+	<script src="https://cdn.bootcss.com/jquery/1.10.0/jquery.js"></script>
+	<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+	<div class="index-baseView">
+		<div class="index-topView">
+			<div class="index-toptitle"></div>
+		</div>
+		<div class="index-posterView">
+			<div class="index-poster">
+				<img class="index-posterImg" src="img/poster.png"/>
+			</div>
+		</div>
+		<div class="index-serviceView">
+			<div class="index-serviceButton">
+				<a href="">
+				<img class="index-serviceImg" src="img/openTheDoor.png"/>
+				</a>
+			</div>
+			<div class="index-serviceButton">
+				<a href="">
+				<img class="index-serviceImg" src="img/payment.png"/>
+				</a>
+			</div>
+			<div class="index-serviceButton">
+				<a href="">
+				<img class="index-serviceImg" src="img/repairment.png"/>
+				</a>
+			</div>
+			<div class="index-serviceButton">
+				<a href="">
+				<img class="index-serviceImg" src="img/complaint.png"/>
+				</a>
+			</div>
+		</div>
+		<div class="index-newsView">
+            <div class="index-plateHeading">
+				<span>热门资讯</span>
+			</div>
+			<div class="index-panel"></div>
+		</div>
+	</div>
+	
+</body>
+<script type="text/javascript">
+	function  loadNewsDatas()
+	{
+		$.ajax({
+			type: 'get',
+			url: "json/data.json",
+			dataType: "json",
+			async: true,
+			success: function(datas) {
+				console.log(datas);
+				if(datas.msg="成功") {
+					$.each(datas.result,function(index,value){
+						var link=$("<a href=''></a>")
+					    var newsDatas=$("<div></div>");
+					 	newsDatas.addClass("index-newsDatas");
+					    var newstitle=$("<div></div>");
+						newstitle.addClass("index-newstitle");
+						newstitle.text(value["title"]);
+					    var newsTime=$("<div></div>");
+					    newsTime.addClass("index-newsTime");
+						newsTime.text(value["time"]);
+						var newsAuthor=$("<div></div>");
+						newsAuthor.addClass("index-newsAuthor");
+						newsAuthor.text(value["author"]);
+						var newsImg=$("<img></img>");
+						newsImg.addClass("index-newsImg");
+						newsImg.attr({"src":value["img"]});
+						var newsLeftPart=$("<div></div>");
+						newsLeftPart.addClass("index-newsLeftPart")
+						var newsRightPart=$("<div></div>");
+						newsRightPart.addClass("index-newsRightPart")
+						
+						newsLeftPart.append(newstitle);
+						newsLeftPart.append(newsTime);
+						newsLeftPart.append(newsAuthor);
+						newsRightPart.append(newsImg);
+					    newsDatas.append(newsLeftPart);
+					    newsDatas.append(newsRightPart);
+						link.append(newsDatas)
+						
+					 	$(".index-panel").append(link);
+						
+					 });
+				}
+				
+			}
+		});
+				
+	};
+	loadNewsDatas();
+</script>
+</html>
